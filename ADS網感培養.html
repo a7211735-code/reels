@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAABmJLR0QA/wD/AP+gvaeTAAAgAElEQVR4nO2d53MjSZbYM8vCEN6QIAl6sskm27G7p+1MT09Hz6zT7satUVzs6RQncyF9UYT+Av0DUoRMSIpQbChWWjOze3taM3Z3psfszLT3hk3vQAdHeJSv1IciQRAogCAJEgSrfsEPYCErK6vqIfPley9fwnff/hToVA+KpgkCq3Ur9g8N3eo+gOOYpqQHAEAgVOsmHCIIkgQae54E0Nod7xk4juGYtroffQirJiRJ1boJNUAXoOqAYRiOa/FhavGe9wKKImrdhNqgK9HVAEKI49p8kLoSXQUIAocAaPNJ6kNYFSAIjY5fugBVAQyD2lSfFbR759WCwPFaN6GW6Er0boE4oUnlZw29B9oVEABcUaC1ij4L2xU4TkCgaQHSe6BdgWlYfVbQ+v3vEl2AdCV6FyCAYbjGH6DWf0C7AeKYptUfAHQleldgmEbdF/noPdDOwaD+9HQB2gWYti1ACroSvRv0n5/+CHYB1DsgXYB2A9QlSJ+F6ewSTXuSdwnUZ/EAEJp/ArsAQv3p6TqQzq7QBWgX6CaQg6NEm8zGzp42HIc8LwqCwHNCNstkUlmW4WrdtJIggODBeHo15KAo0Z09bQ6npfi4JMqJRCoeTcZWE0yWrUXTSoOAtoPJwAFSogVeUD2OE5jTZXO6bAD4s2kmuBwJBldLFd5nZIA0Lz8A//H3/6bWbQAAgEQsKYmI43ieE0RRgmpLzUmKdLhszf4mk8nAsTxfazEiCALTXjqOAg7KijhRlAJzS/lHKANlMhtsNovDaW2wmHNWXwwCb5PT2+hcXU3MTS+lU5natBgAJNfqygcI+NuffVTrNmwNSRCuRkdjk9tqM+cfRwiFg7HZ6QWO5fe/VRRF0gZ6/697oMB//L2f1LoNWyPLcjqZCS6Fw8EYhkOj2YhBqHijzA3GJp9HksR0MrvP82qIQVLDi5oV8B8dDB2oQgRBjEbiweUIhNBsNStihGHQ6bLbXbZ0KruvihEEFEXu3+UOJAdFid4WkiTHoonISpQyUGazUTlI01RjswfHsGQ8jfbFOIEQogyUxididTyJYBju5dPJZ0/G2XUFCIPA3+E7de5og8W0P22QZa0r0nXZA+XDZrnlxTCE0Gq1KDM1iiIbm704hiUTqb1WinAM4tpOrlAfSnR5EELx1WQsErc6LBRJKoEWNrvF4bIl46k9tTpCCElS02oQ/qP6FyAFjheWlyIQA1bbWldE01RTqxfDsURsr7QiGSGSJrXs0ahjHagYJMszkwuPH7zMrnvNMADb2ptPnx+y2a17ckWEkKRpNejw9EA5OI4PLodxErdYzUrqDJIkGptdBqMhncxIklTdy2E4rmU16HDawSRJnhydC62s9g10mE1GAAAEsMnn9jQ6VxbDC/PLLMtnmewXf/l8dPwlx7Jeb9OrF1/t7e3bwbUEQdCyNQj/0XcPWw+Ug2P5lcUwAsBib1gzOUJotTU0tzXhGPwv//U/T0xOCIIgI5RKp0ZGX1gaLL5G33avgmREkCSm1RUaxP7Y3GqFJKPZqYXQSrSjp9XjcSgjGgbAjc9vrASD+SURQp98+nH/kaOG7bu3BIHHaY06xQ7nEFZANsOMPJmwWhv8Hc1urx0CePfOveJiHM9ZHdSx40MMy/Esz2Y5luM4lt8ydETgJZpG2kxVpgkBUkgm0y+ejpvMxiafi+PUvfeCJFosZovFXHBcRLLAiwLH87zA8yLP8YIg8JzI8zzPCwIvSBIiNLlU/qCEtO4b2TQzPbHgtLsDgYWCr3AcH+g/onoWATGCpox0yf14JCDLoiwIkiSIvCCIgihLsijKoihKoiRKkiRIkiRJh27Or6EeKJ+L5y+9HH/Jc5si9q9eeT2ZyIpCiDbQBiNlMNCV7/+FA4yg8C2nYwgBSRJFUZZFSRQlRcJkSRJFSZaRKIqSJMtIliVZFiVJkiUJoYMdtwbf+el7tW5DbVheWX7vgz+GI2ElWfjFC5cvXrhUkPKHJAnaSBkMBtpAUSRB0RRFExRJkTRJUQSGbTL/QLgnq+URAJIoSZIsy5IsIlGWeY5fXgwfkMBw7QqQQnQ1yjCs1+2mtj+NwgmcpkmSIkmKpCiKpgmz2UzRJEEQOImTBIbjxB7N7uOx1NT4/J5UvU00OoTlcDldOz5XEqWsKIHMxmIjmqYMRkN+GRzHcBzHSZzAcZzASYLACQzHMZwgcGLtIEHgSrF6tCVpToneUziWJykqX3OSRFkSZcBVNNxgGMRxHMMgTuAYhmM4huM4gUOMUP7BMAzDCVwSpeXF8AF5cVrvgaoOm2XMDYVWgAqRZSTLIgCgQoE7CByUhYWHBkGUeEGgNBMkdFDWxh8m2CxDWHGNeMcOVTzQAUFGiGUPbk6I6qIr0XsCz/IkQZDk4Vcx9R5or8hmsofPcVGMrkTvFQiBTCbbYGkopQsROA5xKEmyXM9yVsdK9OlzQzhRMpZ09PlUMpHespKjJ3obGrZYRCZJMs8JHMdl0kwsmshmmApbKEkSy7LGddMiQRKNTS6bw2J1WAw0Bde3apEkmckw8Xg6FolHw3FUV4nP6nWQdrrtbV0tZQpks+zzR2Nb1uNpdDpd9m1dOplIL8wtz0wu8CViQvLhWA7DMYvF3NXr9/rcqvs74zjWYDU3WM2tbY0cw8/PLi7OB+tFiupViW71N5Uv0OJvev5wawHaAVZbw9HjvX2DXRMvZsZHZrZcnOp02k6dO1rh8jHaSPUOdHqbXM8fTfD1YE7EEAD1+Nfsbyx/YyazweF2bFnPjiFwfOB4z5U3zxnNhjL1t3e3nr10fLuLD20O66lzRym6DqyRdTkLc7rtRrNhy2L+9i16qd1jd1qvXD9faim+02U/9crRncV4mMzGgeM9u27gnlOXAtTaVpFktLY17cN2FkYTfenqabIolAxCOHx+cDcNcLptnqadBwvsD3U5C2spGr9kWWYZ3rS5W6KNlNtrDwdXt1t/NsPGonHlM4SQpEijiW4oCpTOYW4wnTzTf+/m0/yDbq/DamtQLR8Jri4HQgzDCoJIG2izxehv8zXYVOpvafOGVyLbbf9+Un9KtNPtKB6/4qvJRDzV2eMvON7a7guvlBUgtdtfDcfufv2k4CBJkf52X+9gZy4jUT7+juaZiYVIaONazSXU/Md3R1aWwjS1Fl7Ns0Iqng4uRIaG+9yNzoLCdqeVIAhREMvdQk2pPyW6VU2ziYbjqj1Ni78RYuXuURXVkjwvTE3M33j/6+XFsOpZR4a688urmpdESZqZWshkGIblZIByhWWERp9PF1uAIIRGUzklveZ/9WcHKh6/AACRcGw1Ei8+TtGU1+daKfHKd4AgiHe/enz1GxeKh6dGn8tsNmbWzYy0USVGVuREZdrPMKwoiiazKee05zlhYS5IF828Dngu6joTIJfa+AUAiIZjHMunkhmLtVCT8Lf5qihASkbipw9eXn7jbPFXXp97ZjKgfJZElXHHYKJ9LR6lDxMEMZVMmxpM5HpuhomRmSq2c3/AAEJ19NfaptL9pJIZjuEAQuFgtPhbn9+LY7Bkneps0YzgUiSTzhaf5m105sqkkuoJrM9dPtk/2EXiOEBIlqRMMs0ybP3u21Jn0/gWtQl8NLym/ajqyyRJNDZ7qt4SVZXL5XXkPi8vhFRPxAl88GTft3549cKV4a6+dovNzLJcMpkW1XqsgwxCiGGYevLGuzzq41dweVW5i5XlKEKo2PTi7/AtBoLFJ5Zhy8cSiyY7ugsPGgw0gFDRhZcWQol42mZXn8kTBNHsb1Ts6QIvhEOx0HIkEo4jGdXF9gkCz2ezrCzL9aQD+UvYD0PrlhKB51cjcZfHUVCgqcVLEER1f+KqMYcQgwRJCjyv/EDv33p65c1zxFbpp0iKbG71Nrd6AQCR0Orc9FJsNXlgUzVIkshmOV5Y89PVgbDnaFGbwCfiqfx9DlaWVMxuBIH7/N7qNkYU1D2dBsPGNCoWTdz87H4lTvscbq/z9PmhU2cHMAKroB/cVyRJzGSyyUSaz7t3rPaWhMr+XG6H0aQyfoWXo/nFSk24/O0+9ZpVqbBVFZwbWl79+P2vF2aXt/WqXB7H5deHSZJgGRbIcs0fvihK6VQmGU/zLF/wVd24Mkp5RoPLkfxbiK8mOJanDYVpNBp9bpIi1NaTlxGEchCU+ujPsnzBuUyGuf3lI9uzyY5ef2ubz2iqaA01SZHnr5z67MNbsXiCoiiKJEia3GejEAKywIkcx4liycSSdaNEq86/JFEKBaP5t4AQWl4MdXS3FpTEcazF3zQzFajwcls+FtVEZkhGgiConhuPpx7fG3l8b8TmsHgbnS6P0+11lhcmiiJPvTL4xSd3OI7nOB7LQNpAkzRJYHub0xMBJPACzwl8iWE6n/pQokvNv2RZPnvxeMHBUiGqrR2+ygVoS+wulbzBLMtvGZCaiKUSsdTE6BwAoMFiamr2NPubGn3qXnevz+Vw22ORuLJaiGFYhmExCAmKJAmCIHG8SsIkAyCJkiiKgiBsy/VWHwLkb1fPfUlSZGuJr4ppbHLRBqpaO4t5GlVeeWw1sa1K0qns5Njc5Nic3Wk9e/6Y3WUrLtPc6o1t9tLICPEcr+jmGI7hOEHgGMQxAsMwvKIFjQgiJCElK5GS9koS5Z1ly6wPb3yFAUDlgRhsbfNNjc1VVLrsY2lqdqv2c+GVqHJiz5F2T1Oha31hPhiYWSo+CwAQjyb/cuP+t/7qClG0AZnVai7TGFmUZXGTZgchhBCDEEAIMIgBDK4lREcIIQQQQLKMAKhW6H4dKNGlxq8d4O9omhqbraxsyceCE/jxMwOqXy3OrygnmhqMxV0jhDAws1iqWo5lk/G0010Y4U/R1LbeEUL7mtSsDpToUuPXDnB7nQaTIX/7cNXbLzNJJwni3GunbHaVHcpXliLpdQcZk1VZ+tPU4jHluesLwDDM3KASacRz6lr5AaEODImVazlbAiH0d+ywNpIiu3vbrn/3VcVkXMzI04nc51AwVlwAx/FLr5+mjeqZOk8M96vuwMpUvAytJhx0JdrtdaqOX6lU5sPffV7mxK7etjMXjhUfb+tsHt8qasLtdVy8Mrz+H6Ro0mgyNFhMZQKc56YX88MR46uJdDpbrCfZXbZvfe/1qfH5laVQOpWVZWQyG622hu6+tmIPjMLKcjVjUarOQVeiW9vUO4zl+WD5li8GVk6fHyp+5U6XvcFsyo01qpWYzEaTWtxqKVLJzMM7LwqqGn8xPXxuqLgwSZH9Q939Q0WeWDVYhgsuRQ/yOzrQQxiEsJQBejGgHiyRg2P4aEhlHAEA+DurNiYCAJgM++Und4tt3FNj8/Ho9mb1xTy6N3LAd9XEah8kVvrP6VFf/8VzfDgU3fL0wLy6B8rf2Zwrs8vHtxqJf/LhV6lUpvjqMpK//OxeWi3urEImx2bnZxZr/hbK/x3oHqjU/GspEKzEjLE4t6J63O6wllpwUzmCKD59OHrjw5vZvCytBWQz7Gcf3czXjSoEIfTy2eSD28932ch94OAq0RDCUgJUYXRYJsPEowlV825bZ/Pzx+M7a1g8lpqfXpyamK8kTiObYT/96FZXj//IUHdxvHYxCKHgcvTJw5e7H/72h4OrRBvNhkg4BlSmIGhlMVJhs0dHZlRXcWAYptQQWo6W6UIUJFHkWIFluUw6Gw3Htixf2FyEpsbnp8bnPY2uZr/X7rTZHRZD3poNWZazWTYeSUQiscDscjZ9oOftBcCf/bd/rHUbNApFkhCHkiiVCZY4+BzyDecOMpzAgzrI37IFB1qJ1jn4HFwdSKcu0HsgnV2hC5DOrtCVaJ1dcSAMiTzHpbMZp6MwhG8fGJsYTaaSyufhE6cDC/MPH92/fu0ti6Uw5FkURVFam2/TFKXqmUcIpdKp1djq6mqUJMljg4Xx2uVBMlpaWTQaTcWPQhCEFy+fu11ut9trOEhbjB8IJXpiauKTz/7sb207fuxkd0e38m5m52Z4sdJprsNm97h3snRwZOTFXGAtRjGVTD59/gQA8M5vf/X97/zA4960ov7egzt37t1WPv+Lv/17q0Ulpgwg8Kt3/i/LcQCAhgbLsaOVClAsHrtz7/bc/AzDMl5P41//8Ce5LNJr7Rx98flfPlU+Wxos33zz282+clmO940D0QONTYwihOYDc4lEoru9W1nU+/mXn8YTKil/VBk+eXpnAoTlJW4+2j84NTOZyWQymczjpw+vv/HWdmuDEDZ6fYpEptOpWDzmsKtH+ShEohFJlgAAgsBPzkwoq11D4eCd+7c6OzfFezx5+ij32WKx4gQRDAcBAA6bg6JK7iW9D9RegOKJWGBhbfvP4VOnC355O2A1tvqnjz+o9OrJDRm98fnHyqa7GIZFIuGPP/3TljIUXY1Mz07nHxGljTUxt+/ddLs2dWMd7Z2evCO/f+//pdOp4mpv37t1+96tUhddWl58+ze/UD7/1Xd/2OZvL9/IPaX2MdGPnz5WXOsmk6mvt//ZyLPBAZVAsPLkRzHzAq/8OreLsoOz4pwKhoM4senhFDwo5d9gOPT1rS9LVTg2PjoGRvOPmIymApHaJWXCt/eHGq/KyGQyz18+Uz6fPnlmdHTki68+GxsfuXZ146fva/K9df2b6XQ6kUi0tLQwWSaejHs9jaIovP2bX+ZVhoo+7J7yK+B3dq2NUy5duCyUWP352Ref5hZXDJ86Y7ep78fgdDpr+wZrrETfuXdLGfjtNsfQ4PGfv/1/AAALiwvvfvD7jSbi5PjE+K07X5tMpn/5t3+/vLT0pxsfEQRx5fLVjYpK/BKbGn2tzYXLnPNZWllaWl5bajNw5KjZtBFxYbXYQKkuqDryA/p7B9778A9TM1Plz3j46L7q8X/9d//GZDTV9g3WUgcKR8IvXq7FTF25fGV8fDSnEJw9dfbO/du5kh63ByGUyWSWg8vhSEiZVHs9W2vNrc2tZrN5NaYe0kUQZF93X06A+vsG7HZHMLTS1tpOr0+Vs0z2N//4DgCA5TaiLP7h9+9gED/S13/m1NlmX/PKysrE1Ph8YM5gNP7gez/MFeM5/u3f/hJC6HF7uzq6jvT1G41b7AxUd9RMgCLR8PsfvasE/JIkOTE1MTu/tljC4/Yc6RvIF6AWXyuEECEUDK0Ew2GljLXIVLPG5hQWM/Oz8/PqiwkNBuMbV67l/mVYduTOV2PjoxCDTV7fm9e+YbfZkYwSycLJYCqVAgAwTJYkSRtpfzn2cmpmEgAgpASWZRu9a3HcU9OTynrQYGil3d9us6oMQ8Onzh7pU1mm+OGfP8gNYedfuahqJKOp2huEaqZEh1cjuRcjCMLI6AvlM4Tw9deugTwlGgEwPTtFUzRtoFmWVXogmjaEo5tSauZuRMqLQodbZQczmTa6hMDC/PjEmGLQYxjGarFtqaIq33Z39dxZnzRNzU571wVoenYqd1NHjx7Lr2phMfD+R38sV3Pe6tKHj+6rTk5vgI8BAF2d3dff+Eb529w7aqZEd3V0qaadGxwY8jX5Clp1685NlmNZjr273i0tLAZamgssaWunyPJGfBaBY99+6ztlFjYw7EbQ+8jo81yo9flXLkCsklkOAgC4nC6apjmOMxqNFEkqB0VRmpxeW2rY7m+3Wiz5VcmSxHGVbszLC+ViZwVerKEeXTMlmiKo7s6eTCbtcLjGJkZ5nlNU6VcvXkESqsgapDqxBiB/B0kcw0devvjiq89UKxgcGHr14pWNCtalp6W5pbe7T6nQbDL/u3/77xWjzt37d5QCf/c3/8pisUxOTbzzD79SjkiyjGGY2dwwMTk+MTkOABBFgefXXnwkGsmVPH3qTG93n8lk7u3uzV06sBBgOTbX5q7OroKmxhPxnJUBQtje1kmu79bY1NhUQz16OzoQArIsS0gGCKxleti8NAJCCAGAGFTyQmAYVj5R5JvXvgEhfPT0oSI9OIYfGzz26V9uBIMr/+yv/3l+yb6ePoZlBVEILAQYJjNw5CiG4S6Xek6d/AzfOL7FDVIURZBkfsJDiqKuvX69EkMUwzKhzQanSER9FWk6k05n1vbfzGazAAC3y/3NN7+jHLl7/87E1MayaJIkizsniGFwPf8rQiiTTn3zrW/bbeXM3PtDueerZI6RZSQjWZYQ2v4KN4hBDMcwiGEYxHEM36yRQAiD4eDN218p/144d3FpeUnRRnMzo/WvLgEAfvXrn2ezaQBAT1dPR3sXy6oHnzPcRtC7wWBg2bV/jUZTd2cPACAYWg7nvWmz0ZwQNtTka69f37cXw/P8p198Mj65sbNiX8+RxeWF+XXTfD5nTp19NvJUka1wNPyr3/zi7PDZE8eHKbKmrozCcUCWBUmSRFkSpd2nkFFED4B1pQRCAscxHBIEgeNYIpF47/0/SJKkOAgJkhTWvaej4y/z6xmfmuA4hjYYAAAUSc0FAqlM2p7nZspXVZi8+bbRaGbWBchqsV69ck0ZjHICND45ls5u7M17bPBET3dfqZQdBZczGoxezxYbJxZjMpmU9Dzjk2Nf3/oyk9m4us1mO37sVG9PnySrNMFkNBpN5q9ufqG8F1EUb9299fjp46MDxwb6Bxz2GsQybPRAsiwLvCSKgqzW9KqBkCiKQAQ8JyRT8Q/+9MfcwJ9Kp3LeZgDA5PQEmffDunv/1urq2pyLF/gnzx4CAM4Mv6J6EY7d6IFMJtNqbO3EUDj0v/73/8gf42bmpkdGX+T/Tk6dOF353XR393bn6TGVs7oaff+jd+OJwpXXiUTit797Z1tVMSzz6Mn95qbmmgmQwAmCKKnuDLKnmAymfL9jARzH5ekBpYLe8o4qC20BUMwzeVcx5hWRC3QLRR3JZzUWsVlLmZfyPyOAUDabMZnMgcXAg0f3St1IPpfPv+p2ewAADrujo73z8VO1FDAYXpykTIEXNhIw2m2OnPxdfe1aR3tHrXbbIFQzru/HhQmypdk/Nz+j6K0uh8ftcjd6vcFQcGp26tjg8ecjz3Lde0d7R64jOdI7QJIEAMDtdKvWnAsQgxAzGAx2m723qxcAwHJsYDEAALBYLE2eJgCAhOSZ2U27dIUj4c72whlQMY+fPZoPzNK04Yff/3E2mw6oqSzF5LpbCOGrF1/jeW5k9IXT4WKYLLOuzzkdzt7eI6qnP3h4j+PXXtbV197geP7ug9t2m+No/2AlV98jaunK6O8daPI0+VvaGxrWgrMkGXG82NmOXjl9bixPDTp57NTDxw+Uz5fOXzKbGwAApZToxHoUkc1q43iu3d/eYDY/ff4kZ5wUeOGN169TFBWLxzLpdGOT79nzJ4oYKVbK5eCyyWC0lfBfAgAeP30IACBIEu1ixL/62rXWlra+nt5f/vrnOQEKR8PhaEUJgbo7u7s6umqeu6OW4RyrsVUAYSKVZHlucSmwHFy2Waxjky8BAEcHhvLHLTLPZn/3wV2rxZLOZro2b3ailOZ5LtcDOeyOP7z7O1ESrFbb7NxGUimWY588e7QcWpmbm8Ex/Dvf+n4gMBeLxwAAkUgEARCLrb5/56trV9/saOuURHFmfmZicjznackhCkI0vilLtclkIolNO8YxDJMzAxYYJSGG9RV1Nl5v49F+laxCAIDbd2/mfjNrVUGI4XjNwzlqxsT0WDweAwB0tnfPzE0pPi/lq5mZ6Y0fNwIkQRqNRoZhAADPR9b2trUXuJaUte7hUG5IcjhcC0sBQRByzlSSIGWAJFF8/PRRe1snAECSpZdjL3xNLYoApdJJnuN4gWcY5r0P/nBm+Jy/1f/Rn99Xbb/NakfSJv3stctXezo3qdU3Pv/zy7GRgkaWIRQKhkIVBTNNTk2YjKaaB7bWUoCU3xOE0O3yKAJkMpkIghRFIbC4kYwXIQQAevXClc/+ckPIi5LOMgVDGCowIDWYzUq0Tc5USJBEZ3vXajzqdXm7u3vHJl4CAF6MPD87/MrI6HPlWgtLAWHdgoyQ5Gv00TTF5SXigBC2tradHDrR5u+AEEZjkc1tKCMj6t/mz3wLlGgZyYIg4DhO5FlEZVm+defrYGgFw7BLFy6fGDpV9jHvLTUTIISQMicyGk0N5jUdKJvNul3eleBiKBzMuZolGWUZtre7r7urJ5VOKvn3MYDRNH3/4Z2CaufyBhps3R/icjiD6z/rK5deT2czP3/7Z5Mzk4ptN5GMG01GAseVRRfTM1O5t+WwOTEM87e2T05NKB3Ykb6B40MnSi0gSSaTocim1GlMCUUthyhJGWZjb8Ourp7rV99MJBOx2CqG42PjLyemxmUk22z21ubW1lZ/Npu9efvrYGhFkaSHjx74Gpt3YI6qFjUToGQqqYw1ZpPZYFybbDNMxuP2rAQXPS5vPLkxy5VEOS0xBgOt2IjTmbQkSTldR+kVAACpVDIUXnt/Lqcrum468ri9igDJsoQTRDabUYQVwzClDXOBua7O7vHJcQDA2MQYse5mcjicAICOts5QKHR88PhA/xBNlzP75qzqlfP46cN8R8r07NT//Ol/V1zxBtqgTNyQjELhYCgcfPjkQa4kSZDnXrl4bGAILzHt3x9qdu3V9Z7f5XBT5Eb01snjZ7o7emw2x+/e/XXOGQkAAAiwDCdShIGmnj5/+vDxJtMLTdMIgOcvN9zpbf6O0fERJUK+o6Pr+cgzAADH8b/8zS+49en04MDQsxdPAQBzc7NXr7yhCBBCsiDIihvE4/EgAHq6+/p6+hX/7m401uIBTBSEJ88e5R/JN8hZrba3zn9rfn5uLjCbs6PmEEThybNHqVTi2NAJ1Uij/aFm3vhEIg4BRAB53F6DwXD0yFCzr7XR41vTAEp42kVOzIhyb1dPgQC1+FoBAk1en9ViS6YSAICe7j67zXH/0V2Hze5rbKZISpkNxdbtSQbacHb4/PLKUl9P/9H+YzRNdXX2TM9M5uo8PngSAgwgsLahyQ73hdpccnNhgiAvn3/t48/+VFCQpimPq9qwLzcAAAPqSURBVLGlubXV52/1+S+eu5xKp+bn5+YCM4GFudz6xlQqOTo+MnziTJ1446vKyWOne7r6J6ZGvZ4mA2U4O3yhwhORJBsMZoqiFR++2WQ+O3y+qdGnLJppbW376tbn0WjU6/Z63d7+voF0JkWR1Le/8U+ePHucTCV4QcAgZrVYzp4+ZzQa/+kPfpKr+drr1wFCM3MzJEkO9A2cGVbZ2Ls8g0eHPK5Ngbaj4yMrQfVUjQq93Udu3bvJsIzP6/N6Gj0er8fttVkL0/JZGiyDR4cGjw7xAj87NzM5NRFYmBUl6cIrl02mrTPn7R3wP/2Hn9bw8mUIRUKiKCiBm64io3MiGadoymg0NJhV0mUyDGM0biPRcz6q2/aWgeXYnDZms9oKwkwFUcjZ+iiShFAlm0UkGnbYHNtVZQSeDywGOju6trsEqrrA/3hQBWhrIDDQFEHWfm2klqnn9C4IsJwgbGd3NJ2qcyCSK+wchDiGBwiQej9UI+q5B1qHY3lBqONEp3VNHWw4Vwkcz2GQwom93Y1Wp5jaJ1eoDjLKspzRaMDxw9Cn1hGH6HGjijZN1qkuh0r3RLLMMrzBQNfUMqItDlEPBICyFKlUwhSdveCwCRAAgOdFSdInZfvEoRrC1kEMy5tMBn0g2wcOYQ8EAAAIbQoF0dkz6twSXRqRlwhc1mf1e81hfr5cBTsK6uySwyxASEbFmynrVJdDvlcGJwg4idc2YuZwcyhnYXkgwPMiTZEVFNXZCYd5CFMQRVF3b+wdh1+AAAK6bXrv0IAAASAI0m6yIOiU4bCEc2wBEkSR1DWhPYCoVWKifUYQRD3sdS/QxBCmLNYRdQ/rHqAVAQIASKIuQNVHSwIkydoYrvcVDakFCCFRFPWFiNXl0HrjVRFFkdBXblQVDQ1hSq4qfRirLtoSIIgAkmqc1vSQoS0BKthNTGf3aMQSvYEoybpBuopobkqCZITk7WUA0inDIVkbvy1kSdJX0VcLzelAZfZu0dkBWhQgWdIFqGpoTokGAEgaiUDYF7RliVZAsj6IVQ3NzcLWJmJI1idiVUGLOpCy46BOVdCoAOkSVC20qAMBAGSEoCZvvOpotAfSF2lUC60KENA16OqgRVcGAABusbWgTqVotgfSqQ5atEQr7jB9HlYVNNoDQV0HqhJaFSDdDF0lNKpEb7U/t06laLQHAvoQViUIjeqSUHdmVAeN9kCY3gNVCS0KEIT6JKxqaFGAMEwXn6qhxYAyCKE+BasWGg3n0DXoaqHFIQxCLd71HqG5R4kgwjR303uI5p4lDjHdj1FFNOfKgBimtVveUzQXzoFhUNegq4jmhjCoa0BV5f8D+PzTmPD4ojgAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAABmJLR0QA/wD/AP+gvaeTAAAD1UlEQVRIiaWWSXNbRRDHe0bzniRr3yJLsmzHjg1lTCpODBTLiQOXfCc+ASeuOXCDCyeKG0WFKohTIUlRwbETjJHsyLJWa32SPWtzcFEQS7JfRNec3pueX/f0v6abfPf1j/DmZluWZVtudjJEfOPjETwWRXDlOA2AUkqAujt/KgAhxL0XQzMNwGX4AMDMuFhC4cC1dByA1KpNpz+88NcYY1wTxl9Rr+v0ug6lJJtLp2YTpcKxVOpfgNbg+oooTjatTelVpXRQWVjORRKhnRc759+l0oiA4GpdXQN+yvd2i6d8sLO7fffuZ5R6CKDHtjyUaq2N1lobpfRwcCq4HHUn39z73mWyryVOSSgUtGxGCWUWo5QIIccCrpBpNp8OBv2FP4+UUvNLWZ/XFlzVqs3T4RkXIpO/ZtusWW/3R4TwX4CZHCa9/f4aEDIYnh4dVJZv5A0i52L9zurPPzxaemshmYo7PefOh+sPf/pNijHhAwBFg5NWKh0HgMNCeW4+gwYRoHRY2br/tF5uLi7Peb22Uqpcqj/e2lZSI8LokkpdpqLc/OygP5RCpjNJZjEAAEBEPOOcMfb4we/lw+rSSn7jvTUhuBBCG/2P/DTnvN93ep0+nZQAEJLLp5XWoXAAEbNzaUAMhgL569n8Qua43Pjk002PxXae7Xl9NrOtXs9pt7qtk87JSbvd7vb7A86FQZxY5HAs5PSHv9x/ws/ExuZaJBrsdZ14IhoIzDx7+vKwcDRwhuu3VmczyRfb+43aybnX6BNLvvry20tU9P9tfAa/Pnno881UaxUh5UcffPxXcR8ACsX9ZCKVy+aCgWDxVVFLdfPdjWqtclwpE0Ji0djtW5tjAKOPXb/fe777PJlICSl6vW67067WKn7/jMfDEonky70/YpFou9tBNEKK4kGhWq8CwGAweGftpmVdbHNMCqmUNsYYRABCKdFKM2Y1mo1IOBIORbjgUspWq6S0Xsgvnouk2WoCQLPZaJ40IuEopaTdaUkpGWMXAHQ4PBPnDG2M1koqxxnEYwlK6Ww6Y9t2vVGXUvr9M16vd+vRg1qtajRyzhExFo0vL60KzrvdTmY267W9o3Jkow8vY9bbq2tLizeSiVTpqJhIpFaWV2rVSiab63bby9dXlNYGNSV0xu9Pp9LxaCweT5SPS4gGgFw4jXzx+b3LREDA5/MxRi/bc6mxKx5rhDPO/cRL6MXQXAOu6k2okQvpdTcFTQMAACmkxRiZKgfmsntLpSzmmQbgcj7QWns805SawcR+85qdi3oagMsREw1OM8W6Hx2RwJQAl0WmMCXgb+/i0LGgK8/9AAAAAElFTkSuQmCC">
+<meta name="apple-mobile-web-app-title" content="ADS網感培養">
+<meta name="application-name" content="ADS網感培養">
+<meta name="theme-color" content="#9a8fa8">
+<title>短影片夥伴手冊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday learning, energetic but tidy, for a team
+   IDEA a video editor's timeline: everything is measured in seconds and audience left
+   PICTURE large retention curve, strong hook vs weak hook, stages shaded on the seconds axis
+   COLOUR Morandi purple #9a8fa8 field, plum ink #2e2638, lavender panels; dusty rose #c49a9a support
+   TYPE Noto Sans TC 900 display + Noto Sans TC / Inter for figures
+   LAYOUT title band across the top, curve full width beneath; sections below; phone stacks */
+:root{color-scheme:light dark;--bg:light-dark(#faf8fb,#1d1922);--ink:light-dark(#2e2638,#efe9f2);--mute:light-dark(#6b6275,#b0a7b9);--line:light-dark(#e4dce8,#3a3342);--panel:light-dark(#f0ebf3,#27222d);--co:light-dark(#76698a,#c2b6cf);--hero:#9a8fa8;--bl:light-dark(#b98a8e,#d4a9ad);--ye:#e2d9e9;--ok:light-dark(#4f7d60,#8fc4a1);--mid:light-dark(#9a7838,#d8b675);--bad:light-dark(#a9504f,#e09a98)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;overflow-x:clip}
+.band{padding-block:clamp(28px,4vw,60px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+h1,h2,h3{line-height:1.1;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5vw,52px);font-weight:900}
+h2{font-size:clamp(26px,3.2vw,36px);font-weight:900;margin-bottom:10px}
+h3{font-size:19px;font-weight:700;margin-bottom:6px}
+p{margin:0 0 10px}
+.num{font-family:Inter,sans-serif;font-variant-numeric:tabular-nums}
+.hero{background:var(--hero);color:#2e2638}
+.hero .top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:end;margin-bottom:22px}
+.hero .lede{font-size:17px;max-width:34em;margin:0}
+.card{background:#fbf9fc;color:#2e2638;border-radius:14px;padding:18px 18px 10px}
+.fig{position:relative;min-height:340px}.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;margin-bottom:6px}
+.legend i{display:inline-block;width:18px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .scroll{display:flex;gap:4px;padding:8px max(5vw,16px);max-width:1240px;margin:0 auto}
+.scroll{overflow-x:auto}
+nav a{flex:none;color:var(--ink);text-decoration:none;padding:10px 14px;border-radius:999px;font-weight:700;font-size:15px}
+nav a:hover,nav a:focus-visible{background:var(--panel);outline:none}
+.intro{color:var(--mute);max-width:44em;margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:16px}
+.step{background:var(--panel);border-radius:14px;padding:18px}
+.step .tag{display:inline-block;font-size:13px;font-weight:700;background:var(--ink);color:var(--bg);border-radius:6px;padding:2px 8px;margin-bottom:8px}
+.chk{list-style:none;margin:0;padding:0}
+.chk label{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer;border-top:1px solid var(--line)}
+.chk input{width:20px;height:20px;margin-top:3px;flex:none;accent-color:var(--co)}
+.chk input:checked+span{color:var(--mute);text-decoration:line-through}
+.prog{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-weight:700}
+.bar{flex:1;height:12px;background:var(--panel);border-radius:6px;overflow:hidden;max-width:420px}
+.bar b{display:block;height:100%;background:var(--co);border-radius:6px;transition:width .3s}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:14px;color:var(--mute);font-weight:700}
+td:first-child{font-weight:700;white-space:nowrap}
+.two{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;margin-top:28px}
+.hook{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line);padding:10px 0}
+.hook b{display:block;font-size:13px;color:var(--co)}
+button,.chip{font:inherit;font-weight:700;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);min-height:44px;padding:0 16px;cursor:pointer}
+button:hover{background:var(--panel)}button:focus-visible,.chip:focus-visible,input:focus-visible{outline:3px solid var(--bl);outline-offset:2px}
+.hook button{flex:none;min-height:36px;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.topic{background:var(--panel);border-radius:14px;padding:16px 18px}
+.topic small{display:block;color:var(--mute);font-size:14px;margin-top:4px}
+.check{background:var(--panel)}
+#clarity .step{background:var(--panel)}
+.idea{padding-left:1.2em;margin:8px 0 12px}.idea li{margin-bottom:6px}
+.ba{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;font-size:15px}
+.ba>div{background:var(--bg);border-radius:10px;padding:12px}
+.ba b{display:block;font-size:14px;margin-bottom:4px}
+.ba>div:first-child b{color:var(--bad)}.ba>div:last-child b{color:var(--ok)}
+.safe{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:center;margin:8px 0}
+.safe svg{width:150px;height:auto;display:block}
+.key{list-style:none;padding:0;margin:0;font-size:15px}.key li{display:flex;gap:8px;align-items:baseline;margin-bottom:8px}
+.key i{flex:none;width:12px;height:12px;border-radius:3px}
+.drill{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;margin-top:20px;background:var(--ye);color:#2e2638;border-radius:14px;padding:18px 20px}
+.drill>div{flex:1 1 320px}.drill .note{color:#4a4156}
+.drill button{border-color:#2e2638;color:#2e2638}.drill button:hover{background:#d3c7dc}
+body.locked{overflow:hidden}
+#cover{position:fixed;inset:0;z-index:50;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#9a8fa8;color:#2e2638;transition:opacity .5s,visibility .5s}
+#cover.gone{opacity:0;visibility:hidden}
+.cv-art{width:100%;height:100%;display:block;grid-column:2;grid-row:1}
+.cv-in{grid-column:1;grid-row:1;align-self:center;padding:max(6vw,24px);max-width:620px}
+#cover h1{font-size:clamp(44px,7vw,84px);line-height:1.02;letter-spacing:-.02em;color:#2e2638;margin-bottom:18px}
+#cover h1 span{display:block;font-family:Inter,sans-serif;font-weight:700;color:#f4eff7;font-size:.82em}
+#cover p{font-size:18px;max-width:22em;margin-bottom:28px;color:#3b3247}
+#cvb{background:#2e2638;color:#f4eff7;border-color:#2e2638;min-height:52px;padding:0 28px;font-size:17px}
+#cvb:hover{background:#463b54}
+@media(max-width:760px){#cover{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto}.cv-art{grid-column:1;grid-row:1}.cv-in{grid-column:1;grid-row:2;align-self:end;padding:24px 20px 36px;background:#9a8fa8}#cover p{font-size:16px;margin-bottom:20px}}
+@media(prefers-reduced-motion:reduce){#cover{transition:none}}
+.sense{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.sk{border-top:4px solid var(--ink);padding-top:14px}
+.glyph{font-size:clamp(64px,8vw,96px);font-weight:900;line-height:1;color:var(--co);margin-bottom:10px}
+#basics .step{background:var(--bg)}
+#hooks{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));column-gap:24px}
+@media(max-width:860px){.sense{grid-template-columns:minmax(0,1fr)}.sk{display:grid;grid-template-columns:72px minmax(0,1fr);column-gap:14px}.sk .glyph{grid-row:span 3;font-size:64px}}
+.tl{margin:8px 0;padding-left:1.3em}.tl li{margin-bottom:3px}.tl .num{white-space:nowrap;font-weight:700}
+.tpl{font-size:18px;font-weight:700;margin:6px 0}
+@media(max-width:600px){.ba{grid-template-columns:minmax(0,1fr)}.safe{grid-template-columns:110px minmax(0,1fr)}.safe svg{width:110px}}
+.q{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 16px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.seg{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden}
+.seg label{cursor:pointer}.seg input{position:absolute;opacity:0}
+.seg span{display:block;padding:9px 14px;font-weight:700;font-size:14px;min-width:56px;text-align:center}
+.seg input:checked+span{background:var(--ink);color:var(--bg)}
+.seg input:focus-visible+span{outline:3px solid var(--bl);outline-offset:-3px}
+.verdict{position:sticky;top:76px;background:var(--bg);border-radius:14px;padding:20px}
+.big{font-family:Inter,sans-serif;font-size:clamp(48px,7vw,72px);font-weight:700;line-height:1}
+.pill{display:inline-block;font-weight:900;font-size:20px;padding:4px 14px;border-radius:8px;margin:10px 0}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:12px;margin-bottom:6px}
+.fields label{font-size:14px;font-weight:700;display:block}
+.fields input{display:block;width:100%;font:16px Inter,sans-serif;padding:10px 12px;border:1.5px solid var(--mute);border-radius:10px;background:var(--bg);color:var(--ink);margin-top:4px}
+.m{padding:12px 0;border-top:1px solid var(--line)}
+.m .row{display:flex;justify-content:space-between;gap:10px;font-weight:700}
+.m .row span:last-child{white-space:nowrap}
+.meter{position:relative;height:10px;background:color-mix(in srgb,var(--ink) 10%,transparent);border-radius:5px;margin:8px 0 6px}
+.meter b{position:absolute;inset:0 auto 0 0;border-radius:5px}
+.meter i{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink)}
+.m p{font-size:14px;color:var(--mute);margin:0}
+.note{font-size:13px;color:var(--mute)}
+footer{border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media(max-width:860px){.hero .top,.two{grid-template-columns:minmax(0,1fr)}.verdict{position:static}}
+@media(max-width:600px){table{font-size:13px}th,td{padding:6px 4px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:5em;white-space:normal}.stack td::before{content:attr(data-l);float:inline-start;width:4.5em;margin-inline-start:-5em;color:var(--mute);font-weight:700}.q{grid-template-columns:minmax(0,1fr)}.fig{min-height:280px}}
+@media(prefers-reduced-motion:reduce){.bar b{transition:none}html{scroll-behavior:auto}#ph{display:none}}
+#sense,nav a[href="#sense"]{--a:light-dark(#76698a,#c2b6cf);--t:light-dark(#ede7f1,#2a2431)}
+#basics,nav a[href="#basics"]{--a:light-dark(#5c7a62,#a8c4ad);--t:light-dark(#e4ebe3,#202823)}
+#level-up,nav a[href="#level-up"]{--a:light-dark(#566e86,#a9bdd1);--t:light-dark(#e2e8ef,#1f242b)}
+#clarity,nav a[href="#clarity"]{--a:light-dark(#99625f,#dcaeab);--t:light-dark(#f2e5e3,#2b2121)}
+#topics,nav a[href="#topics"]{--a:light-dark(#86704c,#d2bf9e);--t:light-dark(#efe8dc,#29251e)}
+#precheck,nav a[href="#precheck"]{--a:light-dark(#4d7673,#a3c7c3);--t:light-dark(#e0eae8,#1d2726)}
+#datacheck,nav a[href="#datacheck"]{--a:light-dark(#7a6276,#cdb3c8);--t:light-dark(#ede4eb,#282128)}
+section.band{background:var(--t)}
+nav a::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--a);margin-right:8px;vertical-align:1px}
+section .step,section .topic,#clarity .step,#basics .step{background:var(--bg)}
+.ba>div{background:var(--t)}
+.glyph{color:var(--a)}.sk{border-top-color:var(--a)}
+.step .tag{background:var(--a);color:var(--bg)}
+.chk input{accent-color:var(--a)}.bar b{background:var(--a)}
+.hook b{color:var(--a)}
+.chip[aria-pressed=true]{background:var(--a);border-color:var(--a);color:var(--bg)}
+section .verdict{background:var(--bg)}
+.drill{background:var(--bg);color:var(--ink);border:2px solid var(--a)}.drill .note{color:var(--mute)}.drill button{border-color:var(--a);color:var(--ink)}.drill button:hover{background:var(--t)}
+.seg input:checked+span{background:var(--a);color:var(--bg)}.seg{border-color:var(--a)}
+#steps{grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+</style>
+</head>
+<body class="locked">
+<div id="cover" role="dialog" aria-modal="true" aria-labelledby="cvt">
+ <svg class="cv-art" viewBox="0 0 400 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b3a7be"/><stop offset="1" stop-color="#8c7f9b"/></linearGradient></defs>
+  <rect width="400" height="700" fill="url(#cg)"/>
+  <circle cx="330" cy="120" r="150" fill="#c9bfd2" opacity=".45"/>
+  <circle cx="40" cy="610" r="190" fill="#75688a" opacity=".35"/>
+  <g transform="translate(118 150) rotate(-6)">
+   <rect x="8" y="12" width="170" height="320" rx="26" fill="#5e5270" opacity=".35"/>
+   <rect width="170" height="320" rx="26" fill="#4f4561"/>
+   <rect x="9" y="12" width="152" height="296" rx="18" fill="#e9e3ee"/>
+   <path d="M20 90 C50 92 60 150 85 160 S130 200 150 210" fill="none" stroke="#9a8fa8" stroke-width="5" stroke-linecap="round"/>
+   <path d="M20 90 C45 100 55 230 85 250 S130 268 150 272" fill="none" stroke="#c9bfd2" stroke-width="4" stroke-linecap="round"/>
+   <circle cx="85" cy="160" r="7" fill="#6f6383"/>
+   <rect x="22" y="36" width="70" height="9" rx="4" fill="#b3a7be"/>
+   <rect x="22" y="52" width="46" height="7" rx="3" fill="#d4cbdb"/>
+   <g fill="#b3a7be"><circle cx="142" cy="200" r="8"/><circle cx="142" cy="226" r="8"/><circle cx="142" cy="252" r="8"/></g>
+  </g>
+ </svg>
+ <div class="cv-in">
+  <h1 id="cvt"><span>ADS</span>網感培養</h1>
+  <p>短影片夥伴手冊：從看、拆、仿開始，到選題、拍攝與受眾檢核。</p>
+  <button type="button" id="cvb">開始學習</button>
+ </div>
+</div>
+<header class="hero band">
+ <div class="wrap">
+  <div class="top">
+   <div><h1>短影片夥伴手冊</h1></div>
+   <p class="lede">從零開始的基本功、有基礎後的選題與數據，以及一個幫你判斷「這支到底有沒有人要看」的檢核工具。觀眾留下來的那條線，就是我們每天要拉高的東西。</p>
+  </div>
+  <div class="card">
+   <div class="legend"><span><i style="background:#5e5270"></i>鉤子強：3 秒內抓住人</span><span><i style="background:#c49a9a"></i>鉤子弱：開場慢、自我介紹</span><span style="color:#6b6275">示意曲線，非實際數據</span></div>
+   <div class="fig" id="curve"><svg id="cs" role="img" aria-label="兩條觀眾留存曲線：強鉤子在 3 秒後仍留住約 75%，弱鉤子只剩約 35%"></svg></div>
+  </div>
+ </div>
+</header>
+
+<nav aria-label="章節"><div class="scroll"><a href="#sense">網感培養</a><a href="#basics">新手基本功</a><a href="#level-up">有基礎之後</a><a href="#clarity">看不懂／沒重點</a><a href="#topics">各領域選題</a><a href="#precheck">拍前檢核</a><a href="#datacheck">發布後檢核</a></div></nav>
+
+<section class="band" id="sense"><div class="wrap">
+ <h2>先培養網感：知道觀眾為什麼會停下來</h2>
+ <p class="intro">網感就是「一看就知道這支會不會有人看」的直覺。它不是天分，是每天刻意練出來的。照這三步，每天 30 分鐘。</p>
+ <div class="sense">
+  <div class="sk"><div class="glyph">看</div><h3>大量刷，但刻意看</h3><p>每天刷 20 分鐘同領域的短影片。每次自己停下來、看完、想按讚時，馬上問：<b>我為什麼停下來？</b></p><ul class="idea"><li>把讓你停下來的影片存進收藏，按「鉤子／題目／剪輯」分資料夾</li><li>也要刷熱門頁，知道現在大家在流行什麼音樂和梗</li></ul></div>
+  <div class="sk"><div class="glyph">拆</div><h3>拆解爆款，寫下來</h3><p>每天挑 3 支高觀看的影片，逐項記錄，不寫下來就只是在滑手機。</p><ul class="idea"><li>開頭第一句、第一個畫面是什麼</li><li>總長幾秒、大概多久換一次畫面</li><li>結尾怎麼收、<b>留言區在討論什麼</b>（觀眾的真實想法都在這）</li></ul></div>
+  <div class="sk"><div class="glyph">仿</div><h3>模仿結構，拍自己的版本</h3><p>挑一支拆解過的爆款，<b>換內容不換骨架</b>：同樣的鉤子句型、節奏和長度，套進你的領域。</p><ul class="idea"><li>一週至少仿拍 1 支</li><li>發布後和自己平常的影片比數據，記下哪個結構適合你</li></ul></div>
+ </div>
+ <div class="drill" style="margin-top:20px"><div><h3>拆解紀錄格式</h3><p class="tpl" id="dec" style="font-size:16px">影片連結／觀看數：＿＿　鉤子第一句：＿＿　第一個畫面：＿＿　長度：＿＿秒　換畫面頻率：＿＿　結尾：＿＿　留言區在聊：＿＿　我可以怎麼仿：＿＿</p></div><button type="button" id="decc">複製格式</button></div>
+</div></section>
+
+<section class="band" id="basics"><div class="wrap">
+ <h2>新手先把這五件事做對，比追爆款重要</h2>
+ <p class="intro">照順序打勾。進度只存在你這台裝置的瀏覽器裡，夥伴之間不會互相看到。</p>
+ <div class="prog"><span id="pt" class="num">0 / 0</span><div class="bar"><b id="pb" style="width:0"></b></div></div>
+ <div class="grid" id="steps"></div>
+</div></section>
+
+<section class="band" id="level-up"><div class="wrap">
+ <h2>有基礎之後：看數據找問題，再把成功的結構複製</h2>
+ <p class="intro">影片沒起來，通常不是「運氣不好」，而是卡在某一段。先找出卡在哪，一次只改一個地方。</p>
+ <div class="scroll"><table class="stack"><thead><tr><th>症狀</th><th>多半是因為</th><th>下一支這樣改</th></tr></thead><tbody id="diag"></tbody></table></div>
+ <div style="margin-top:28px">
+  <h3>進階的四個習慣</h3>
+  <div id="habits" class="grid" style="gap:0 24px"></div>
+ </div>
+ <div style="margin-top:28px">
+  <h3>開頭鉤子模板（點複製直接改）</h3>
+  <div id="hooks"></div>
+ </div>
+</div></section>
+
+<section class="band" id="clarity"><div class="wrap">
+ <h2>最常卡關的兩件事：觀眾看不懂、看不到重點</h2>
+ <p class="intro">想到就拍、拍完就發，很容易變成「只有自己看得懂」。因為我們腦中有完整的背景，觀眾沒有。這叫<b>知識的詛咒</b>：你知道得越多，越難想像不知道的人怎麼看。解法不是拍更多，而是發布前換成陌生人的眼睛看一次。</p>
+ <div class="two" style="margin-top:0">
+  <div class="step">
+   <span class="tag">問題一</span>
+   <h3>內容不完整，只有自己看得懂</h3>
+   <ul class="idea">
+    <li>觀眾是<b>第一次看到你</b>的陌生人：沒看過前一支、不知道你是誰、不知道剛剛發生什麼。</li>
+    <li>一支只講一件事。講得完整，比講得多重要。</li>
+    <li>最小的完整結構：<b>情境</b>（發生什麼）→ <b>重點</b>（所以呢）→ <b>結論</b>（觀眾得到什麼）。</li>
+   </ul>
+   <div class="ba"><div><b>想到就發</b>只拍跟另一半說：「你可以不要再睡了嗎？」<br><br>觀眾：不知道你要幹嘛。<br><span class="note">除非畫面本身同時有劇情，否則只有你自己懂。</span></div><div><b>補完整</b>POV：男友整理只要 10 分鐘
+    <ol class="tl"><li>同一句開頭，加上他躺在床上的畫面</li><li>馬上切到鬧鐘：<span class="num">7:00</span></li><li>你起床化妝整理，預計 <span class="num">10:00</span> 出門</li><li><span class="num">9:40</span> 叫他起床，賴床到 <span class="num">9:50</span></li><li><span class="num">10:00</span> 他真的準時出門了</li></ol>
+    <span class="note">有情境、有對比、有結果，完整度高很多。</span></div></div>
+   <h3 style="margin-top:14px">發布前自檢</h3>
+   <ul class="chk" data-k="a"></ul>
+  </div>
+  <div class="step">
+   <span class="tag">問題二</span>
+   <h3>畫面選擇，看不到重點</h3>
+   <div class="safe">
+    <svg viewBox="0 0 180 320" role="img" aria-label="手機直式畫面：下方與右側會被介面擋住，主體放在中間偏上">
+     <rect x="4" y="4" width="172" height="312" rx="22" fill="#2e2638"/>
+     <rect x="12" y="14" width="156" height="292" rx="14" fill="#f4f1f6"/>
+     <rect x="12" y="222" width="156" height="84" fill="#c49a9a" fill-opacity=".22"/>
+     <rect x="134" y="120" width="34" height="102" fill="#c49a9a" fill-opacity=".22"/>
+     <rect x="12" y="14" width="156" height="30" fill="#c49a9a" fill-opacity=".12"/>
+     <g fill="#2e2638" fill-opacity=".55"><circle cx="151" cy="138" r="7"/><circle cx="151" cy="164" r="7"/><circle cx="151" cy="190" r="7"/><rect x="22" y="236" width="90" height="7" rx="3"/><rect x="22" y="250" width="120" height="6" rx="3"/><rect x="22" y="262" width="70" height="6" rx="3"/></g>
+     <rect x="24" y="56" width="104" height="156" rx="10" fill="none" stroke="#4f7d60" stroke-width="2.5" stroke-dasharray="6 4"/>
+     <ellipse cx="76" cy="196" rx="34" ry="6" fill="#2e2638" fill-opacity=".15"/>
+     <circle cx="76" cy="146" r="38" fill="#b3a7be"/><circle cx="76" cy="146" r="38" fill="none" stroke="#2e2638" stroke-width="2"/>
+     <path d="M58 136a22 22 0 0 1 22-14" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </svg>
+    <ul class="key">
+     <li><i style="background:#4f7d60"></i>安全區：主角放這裡，中間偏上</li>
+     <li><i style="background:#c49a9a"></i>下方約 1/4 會被文案擋住</li>
+     <li><i style="background:#c49a9a"></i>右側會被愛心、留言按鈕擋住</li>
+     <li><i style="background:#b3a7be"></i>主角夠大，一眼就知道看哪</li>
+    </ul>
+   </div>
+   <ul class="idea">
+    <li>每個畫面只有<b>一個主角</b>，觀眾 1 秒內要知道看哪裡。</li>
+    <li>手機螢幕很小：靠近拍，特寫比全景清楚。</li>
+    <li><b>講到什麼，就給看什麼</b>。說「這個按鈕」，畫面就要是那個按鈕。</li>
+   </ul>
+   <h3 style="margin-top:14px">發布前自檢</h3>
+   <ul class="chk" data-k="b"></ul>
+  </div>
+ </div>
+ <div class="drill">
+  <div><h3>培訓練習：拍之前先寫這一句</h3><p class="tpl" id="tpl">這支影片讓＿＿＿看完後知道／感覺＿＿＿，畫面上會清楚看到＿＿＿。</p><p class="note" style="margin:0">寫不出來就先別拍。拍完給一個沒參與的人看，請他用一句話說影片在講什麼，跟你寫的對得上才發。</p></div>
+  <button type="button" id="tplc">複製句子</button>
+ </div>
+</div></section>
+
+<section class="band" id="topics"><div class="wrap">
+ <h2>各領域選題方向</h2>
+ <p class="intro">選題萬用公式：<b>誰</b> × <b>在什麼情境</b> × <b>遇到什麼問題</b>。下面每個題目都附一句可以直接拿來用的開頭。</p>
+ <div class="chips" id="chips" role="group" aria-label="選擇領域"></div>
+ <div class="grid" id="tlist"></div>
+</div></section>
+
+<section class="band check" id="precheck"><div class="wrap">
+ <h2>拍之前：這個題目有受眾嗎？</h2>
+ <p class="intro">誠實回答 10 題。分數不是成績，是幫你在花時間拍之前，先發現題目哪裡會沒人看。</p>
+ <div class="two" style="margin-top:0">
+  <div id="qs"></div>
+  <aside class="verdict" aria-live="polite">
+   <div class="note">題目分數（滿分 20）</div>
+   <div class="big" id="ps">0</div>
+   <div class="pill" id="pv">先回答問題</div>
+   <p id="pa">每一題選「是／不確定／否」。</p>
+   <button id="pr" type="button">重新作答</button>
+  </aside>
+ </div>
+</div></section>
+
+<section class="band" id="datacheck"><div class="wrap">
+ <h2>發布後：用數據確認有沒有人要看</h2>
+ <p class="intro">發布 48 小時後，從後台抄下這些數字。分享和收藏最能說明「觀眾覺得有價值」，比按讚更準。下方預填的是範例數字。</p>
+ <div class="two" style="margin-top:0">
+  <div>
+   <div class="fields" id="fs"></div>
+   <p class="note">門檻是業界常見的大約經驗值，不同平台、領域、帳號大小差很多；最好的比較對象是你自己過去的影片。</p>
+   <div id="ms"></div>
+  </div>
+  <aside class="verdict" aria-live="polite">
+   <div class="note">達到「不錯」的指標</div>
+   <div class="big num" id="ds">0</div>
+   <div class="pill" id="dv"></div>
+   <p id="da"></p>
+  </aside>
+ </div>
+</div></section>
+
+<footer class="band"><div class="wrap">短影片夥伴手冊 · 內容可依團隊需求調整。數據門檻為參考值，請以平台後台與自身歷史數據為準。</div></footer>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+const cv=document.getElementById('cover');
+const closeCv=()=>{cv.classList.add('gone');document.body.classList.remove('locked');setTimeout(()=>cv.remove(),600)};
+document.getElementById('cvb').addEventListener('click',closeCv);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('cover'))closeCv()});
+document.getElementById('cvb').focus();
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+
+/* ---------- hero curve ---------- */
+const s=$('cs'),box=$('curve');
+const strong=t=>t<=3?100-25*(t/3):75*Math.exp(-(t-3)/40);
+const weak=t=>t<=3?100-65*(t/3):35*Math.exp(-(t-3)/18);
+const stages=[[0,3,'鉤子'],[3,15,'張力'],[15,25,'價值'],[25,30,'收尾']];
+const draw=()=>{
+ const W=box.clientWidth,H=box.clientHeight,narrow=W<520;
+ const m={l:narrow?34:44,r:narrow?44:96,t:28,b:34},w=W-m.l-m.r,h=H-m.t-m.b;
+ const x=t=>m.l+t/30*w,y=v=>m.t+(1-v/100)*h;
+ const path=f=>{let d='';for(let t=0;t<=30;t+=.25)d+=(t?'L':'M')+x(t).toFixed(1)+' '+y(f(t)).toFixed(1);return d};
+ const fills=['#ebe3f0','#f4f1f6','#e6e0ec','#f3e8e8'];
+ let g=stages.map((st,i)=>`<rect x="${x(st[0])}" y="${m.t}" width="${x(st[1])-x(st[0])}" height="${h}" fill="${fills[i]}"/><text x="${(x(st[0])+x(st[1]))/2}" y="${m.t-9}" text-anchor="middle" font-size="${narrow?12:14}" font-weight="700" fill="#2e2638">${st[2]}</text>`).join('');
+ [0,25,50,75,100].forEach(v=>{g+=`<line x1="${m.l}" x2="${m.l+w}" y1="${y(v)}" y2="${y(v)}" stroke="#2e2638" stroke-opacity=".12"/><text x="${m.l-6}" y="${y(v)+4}" text-anchor="end" font-size="12" fill="#6b6275">${v}%</text>`});
+ (narrow?[0,3,15,30]:[0,3,10,15,20,25,30]).forEach(t=>{g+=`<text x="${x(t)}" y="${m.t+h+20}" text-anchor="middle" font-size="12" fill="#6b6275">${t}s</text>`});
+ g+=`<path d="${path(weak)}" fill="none" stroke="#c49a9a" stroke-width="3.5"/><path d="${path(strong)}" fill="none" stroke="#5e5270" stroke-width="4.5"/>`;
+ g+=`<line x1="${x(3)}" x2="${x(3)}" y1="${y(75)}" y2="${y(35)}" stroke="#2e2638" stroke-width="1.5" stroke-dasharray="4 3"/>`;
+ g+=`<text x="${x(3)+8}" y="${y(55)+4}" font-size="13" font-weight="700" fill="#2e2638">${narrow?'差 40%':'前 3 秒就差了 40% 的觀眾'}</text>`;
+ if(!narrow)g+=`<text x="${x(30)+8}" y="${y(strong(30))+5}" font-size="13" font-weight="700" fill="#5e5270">${Math.round(strong(30))}% 看完</text><text x="${x(30)+8}" y="${y(weak(30))+5}" font-size="13" font-weight="700" fill="#a8777b">${Math.round(weak(30))}% 看完</text>`;
+ g+=`<line id="ph" x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${m.t+h}" stroke="#2e2638" stroke-width="2"><animate attributeName="x1" from="${m.l}" to="${m.l+w}" dur="8s" repeatCount="indefinite"/><animate attributeName="x2" from="${m.l}" to="${m.l+w}" dur="8s" repeatCount="indefinite"/></line>`;
+ s.innerHTML=`<style>text{paint-order:stroke;stroke:#fbf9fc;stroke-width:4px;font-family:Inter,"Noto Sans TC",sans-serif}</style>`+g;
+};
+const ro=new ResizeObserver(draw);ro.observe(box);
+
+/* ---------- basics checklist ---------- */
+const steps=[
+ ['第 1 步','定位：先想清楚給誰看',['寫下一句話：「我的影片能提供觀眾什麼價值？＿＿」','選一個你懂、喜歡、能連拍 30 支的主題','找 5 個同領域做得好的帳號，各拆解 3 支','帳號名稱、頭像、簡介都講同一件事']],
+ ['第 2 步','拍攝：手機就夠，但要拍對',['一律直式 9:16、1080p 以上','臉朝窗戶或燈，不要背光','聲音不要有雜音（麥克風視情況使用），收音比畫質重要','手機固定、鏡頭在眼睛高度','沒把握的畫面多拍幾次，剪輯時才有得選','講錯一個字不要補講，那一句直接整句重講']],
+ ['第 3 步','剪輯：節奏決定完播率',['剪掉所有停頓、「嗯」和重複的話','全片上字幕，重點字放大或換色','最強的畫面或結論放在前 3 秒','每 2–3 秒畫面要有變化','新手長度先控制在 15–40 秒']],
+ ['第 4 步','發布：讓對的人看到',['封面放 5–10 字的大標題','文案第一句再講一次鉤子','3–5 個精準標籤，不要亂塞熱門標籤','固定頻率（例如一週 3 支）比偶爾爆發重要','發布後 1 小時內回覆留言']],
+ ['第 5 步','復盤：每支都留紀錄',['記下觀看、完播、分享、收藏、留言','看留存曲線：在第幾秒掉最多人','一次只改一個變數（鉤子、長度或題目）','每 10 支挑出表現最好的 2 支，拆解原因']]
+];
+let done=store.get('sv-done',{});
+$('steps').innerHTML=steps.map((st,i)=>`<div class="step"><span class="tag">${st[0]}</span><h3>${st[1]}</h3><ul class="chk">${st[2].map((t,j)=>`<li><label><input type="checkbox" id="c${i}-${j}" ${done['c'+i+'-'+j]?'checked':''}><span>${t}</span></label></li>`).join('')}</ul></div>`).join('');
+const total=steps.reduce((a,st)=>a+st[2].length,0);
+const prog=()=>{const n=document.querySelectorAll('#steps input:checked').length;$('pt').textContent=n+' / '+total;$('pb').style.width=(n/total*100)+'%'};
+$('steps').addEventListener('change',e=>{done[e.target.id]=e.target.checked;store.set('sv-done',done);prog()});
+prog();
+
+/* ---------- level up ---------- */
+const diag=[
+ ['觀看數很低','推薦第一波就沒過：封面、第一秒畫面不吸引，或標籤不精準','第一秒直接放結果或衝突畫面；封面字更大更短'],
+ ['3 秒內大量滑走','鉤子太弱、開場在自我介紹或鋪陳','用下方鉤子模板重寫第一句，刪掉開場白'],
+ ['中段開始掉人','節奏慢、資訊太散，沒有讓人想看下去的理由','每 2–3 秒換畫面；中間埋「最重要的是第三點」'],
+ ['有看完但沒互動','觀眾沒有開口的理由','結尾拋二選一問題，或請大家分享自己的經驗'],
+ ['留言問「這是什麼？」「看不懂」','少了前情或結論，只有拍的人自己懂','用「情境 → 重點 → 結論」補完整；發布前給沒參與的人看一次'],
+ ['觀眾抓不到重點','畫面主角太小、背景太亂，或講的和畫面對不上','靠近拍、一格一個主角，講到什麼就給看什麼'],
+ ['互動不錯但沒人追蹤','帳號定位不清，看不出之後還會拍什麼','做成系列（第 1 集、第 2 集），簡介寫清楚帳號價值'],
+ ['偶爾爆一支，之後又沒了','爆款是題目好，不是帳號被記住','用同樣結構連拍 3–5 支相關題目']
+];
+$('diag').innerHTML=diag.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('');
+const habits=[
+ ['系列化','同一個格式固定拍，例如「每週一個省錢方法」。觀眾知道下次會看到什麼，才會追蹤。'],
+ ['爆款複製','換內容不換結構。紅的那支用了什麼鉤子、長度、節奏，下一支照抄骨架。'],
+ ['建立人設','固定的開場口頭禪、穿著、場景或觀點，讓人一眼認出是你。'],
+ ['熱點 × 專業','熱門話題或音樂出現時，用你領域的角度切入，而不是硬跟風。']
+];
+$('habits').innerHTML=habits.map(h=>`<div class="hook" style="display:block"><b>${h[0]}</b>${h[1]}</div>`).join('');
+const hooks=[
+ ['反常識','「＿＿其實是錯的，90% 的人都做錯」'],
+ ['直接給結果','「這是我用＿＿天做到＿＿的方法」'],
+ ['點出痛點','「如果你也＿＿，一定要看完」'],
+ ['數字承諾','「30 秒教你＿＿，第 3 個最好用」'],
+ ['懸念','「我差點因為＿＿而＿＿」'],
+ ['對號入座','「＿＿的人，請停下來」'],
+ ['比較','「花 100 元和花 1000 元的＿＿，差在哪？」'],
+ ['錯誤示範','「千萬不要這樣＿＿」'],
+ ['好奇缺口','「最後一個方法，我自己也沒想到」'],
+ ['身份標籤','「月薪 3 萬的上班族，一定要知道」'],
+ ['時間對比','「一年前的我 vs 現在的我」'],
+ ['挑戰','「我試了 7 天＿＿，結果…」'],
+ ['提問','「你也會＿＿嗎？」'],
+ ['爭議觀點','「我覺得＿＿根本不需要」'],
+ ['內行揭密','「＿＿業者不會告訴你的事」'],
+ ['排行','「我心中第一名的＿＿是…」'],
+ ['情境代入','「當你＿＿的時候」'],
+ ['後悔','「早知道＿＿，我就不會＿＿」']
+];
+$('hooks').innerHTML=hooks.map((h,i)=>`<div class="hook"><div><b>${h[0]}</b>${h[1]}</div><button type="button" data-h="${i}">複製</button></div>`).join('');
+$('hooks').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const t=hooks[b.dataset.h][1].replace(/[「」]/g,'');
+ navigator.clipboard.writeText(t).then(()=>{b.textContent='已複製';setTimeout(()=>b.textContent='複製',1500)}).catch(()=>{b.textContent='請手動選取'})});
+
+/* ---------- clarity checklists ---------- */
+const cl={a:['拍之前先寫一句：這支要讓觀眾知道什麼','關掉聲音只看畫面和字幕，還看得懂','沒有只有自己懂的詞、人名、梗或前情','開頭 3 秒交代了「這是什麼、在哪、發生什麼」','結尾觀眾知道「所以呢」','看的人會有情緒嗎（好笑、共鳴、驚訝、感動）','給沒參與的人看，他一句話講得出重點'],
+ b:['隨便暫停一格截圖，看得出這格在講什麼','主角夠大（拍物品、食物、操作時佔畫面一半以上）','背景乾淨，沒有雜物或路人搶注意力','拍之前先擦鏡頭，對焦清楚，光線打在主角身上','字幕和重點沒被下方文案、右側按鈕擋住','講到什麼，畫面同步出現什麼；需要時用圈選、箭頭、放大']};
+let cd=store.get('sv-cl',{});
+document.querySelectorAll('#clarity .chk').forEach(u=>{const k=u.dataset.k;u.innerHTML=cl[k].map((t,j)=>`<li><label><input type="checkbox" id="k${k}-${j}" ${cd['k'+k+'-'+j]?'checked':''}><span>${t}</span></label></li>`).join('')});
+$('clarity').addEventListener('change',e=>{if(e.target.type!=='checkbox')return;cd[e.target.id]=e.target.checked;store.set('sv-cl',cd)});
+$('tplc').addEventListener('click',e=>{const b=e.currentTarget;navigator.clipboard.writeText($('tpl').textContent).then(()=>{b.textContent='已複製';setTimeout(()=>b.textContent='複製句子',1500)}).catch(()=>{b.textContent='請手動選取'})});
+
+$('decc').addEventListener('click',e=>{const b=e.currentTarget;navigator.clipboard.writeText($('dec').textContent).then(()=>{b.textContent='已複製';setTimeout(()=>b.textContent='複製格式',1500)}).catch(()=>{b.textContent='請手動選取'})});
+
+/* ---------- topics ---------- */
+const topics={
+ '美食':[['平價 vs 高價同款料理','「100 元和 1000 元的牛肉麵，差在哪？」'],['在地人才知道的小店','「這間店沒有招牌，但每天排隊」'],['懶人 5 分鐘料理','「下班只剩 5 分鐘，我都吃這個」'],['超商隱藏吃法','「超商這兩樣加在一起超好吃」'],['常見料理錯誤','「炒飯一直黏鍋，是因為這一步」']],
+ '知識教育':[['冷知識反常識','「你一直以為的＿＿，其實是錯的」'],['一分鐘講懂一個概念','「通膨到底是什麼？用一杯珍奶講給你聽」'],['讀書／考試技巧','「我考上＿＿，靠的是這個方法」'],['常見迷思破解','「這句話被誤傳了 50 年」'],['工具推薦','「這 3 個免費網站，學生一定要知道」']],
+ '美妝穿搭':[['小資平替','「專櫃 2000 元 vs 開架 300 元，差多少？」'],['身形穿搭','「小個子這樣穿，看起來高 5 公分」'],['踩雷分享','「這些東西我買了就後悔」'],['一衣多穿','「一件白襯衫，5 種穿法」'],['新手步驟','「化妝新手，照這 4 步就好」']],
+ '健身運動':[['動作錯誤示範','「深蹲膝蓋痛，多半是這裡做錯」'],['無器材在家練','「沒有器材，10 分鐘在家練」'],['上班族改善','「每天坐 8 小時，下班做這 3 個動作」'],['前後對比紀錄','「我持續 90 天，身體的變化」'],['迷思破解','「只做腹肌運動，不會瘦肚子」']],
+ '理財':[['新手第一步','「月薪 3 萬，我這樣分配薪水」'],['常見陷阱','「這種保單，買之前一定要問這句」'],['生活省錢','「一個月多存 3000 元的 5 個習慣」'],['名詞解釋','「ETF 是什麼？30 秒講懂」'],['真實記帳','「我記帳一年，發現錢都花在這」']],
+ '旅遊':[['行程懶人包','「東京 3 天 2 夜，照抄就好」'],['避雷清單','「去＿＿旅遊，千萬不要做這 3 件事」'],['預算挑戰','「用 5000 元玩一個週末」'],['私房景點','「沒什麼觀光客，但美到不行」'],['實用技巧','「訂機票省錢，我都用這招」']],
+ '寵物':[['飼主才懂的日常','「養貓的人一定懂這種痛」'],['新手必知','「第一次養狗，最常犯的 3 個錯」'],['擬人配音','「如果我家貓會說話」'],['用品開箱評比','「網路很紅的＿＿，我家狗不買單」'],['行為解讀','「狗狗做這個動作，代表很信任你」']],
+ '職場':[['職場話術','「被主管問進度，這樣回最安全」'],['求職面試','「面試官問缺點，別再說『太認真』」'],['辦公效率','「Excel 這個功能，幫我每天省 1 小時」'],['職場情境劇','「當你的同事說『我順便幫你一下』」'],['轉職經驗','「我從＿＿轉到＿＿，薪水變這樣」']],
+ '親子':[['育兒小技巧','「小孩不肯刷牙，我用這招」'],['新手爸媽','「第一胎才會買的東西，第二胎都不買了」'],['親子活動','「下雨天在家，這樣陪小孩玩」'],['教養觀點','「別再對孩子說『你好棒』」'],['真實日常','「當媽媽之後，早上 7 點的樣子」']],
+ '變現影片':[['痛點開場','「頭髮一直扁塌？我換了這個」'],['使用前後對比','「用了 7 天，差別在這」'],['真實使用情境','「我每天上班都會用到它」'],['賣點強調','「它最厲害的不是＿＿，是這個設計」'],['常見問題解答','「大家最常問的 3 個問題，一次回答」']]
+};
+const more={
+ '美食':[['網路爆紅美食開箱','「網路上很紅的＿＿，真的值得排隊嗎？」'],['夜市必吃清單','「＿＿夜市，我只推這 3 攤」'],['一週便當備餐','「一次備好一週便當，只要 1 小時」'],['老店老闆的堅持','「這攤開了 30 年，老闆每天 4 點起床」'],['食材挑選技巧','「買西瓜不用敲，看這裡就好」'],['在家復刻名店','「在家復刻＿＿，成本只要三分之一」'],['吃到飽攻略','「吃到飽想回本，順序很重要」'],['高評分地雷店','「這間評分 4.5，但我不會再去」'],['氣炸鍋料理','「氣炸鍋 15 分鐘，做出＿＿」'],['外送點餐技巧','「點＿＿外送，一定要備註這句」']],
+ '知識教育':[['歷史小故事','「＿＿其實是一場意外發明的」'],['生活中的科學','「為什麼冬天洗澡特別冷？」'],['語言學習','「這句英文，台灣人很常講錯」'],['一張圖看懂','「一張圖看懂＿＿和＿＿的差別」'],['書籍重點整理','「這本書我幫你濃縮成 60 秒」'],['時事白話解說','「最近吵很兇的＿＿，到底在吵什麼？」'],['職業揭密','「＿＿這個工作，其實每天都在做這些」'],['數字背後的意義','「每天少喝一杯手搖，一年存下多少？」'],['記憶技巧','「這招讓我一次背 50 個單字」'],['常識小測驗','「這題 10 個人有 8 個答錯，你呢？」']],
+ '美妝穿搭':[['一週穿搭不重複','「上班一週不重複，只用 7 件衣服」'],['膚質保養','「混合肌保養，順序對了差很多」'],['快速妝容','「約會妝 5 分鐘完成」'],['顯瘦技巧','「梨形身材這樣穿，腿看起來細一半」'],['網購實穿','「網購 1000 元的衣服，實穿是這樣」'],['配色公式','「不會配色？記住這 3 個公式」'],['卸妝清潔','「臉一直冒痘，可能是卸妝沒卸乾淨」'],['場合穿搭','「喝喜酒不知道穿什麼？這樣最安全」'],['空瓶心得','「這半年用完的東西，哪些會回購」'],['髮型教學','「不用電棒，3 分鐘弄出蓬鬆感」']],
+ '健身運動':[['新手課表','「健身房新手，第一週照這樣練」'],['飲食搭配','「增肌期間，我一天都吃這些」'],['體態改善','「圓肩駝背，每天做這個 3 分鐘」'],['器材正確用法','「這台機器，很多人都用錯了」'],['30 天挑戰','「連續 30 天每天 100 下深蹲」'],['健身房禮儀','「在健身房千萬不要做這件事」'],['跑步技巧','「跑步膝蓋痛，先檢查這 3 點」'],['伸展放鬆','「睡前 5 分鐘伸展，隔天腰不痠」'],['裝備挑選','「新手買跑鞋，看這裡就不會買錯」'],['流汗迷思','「流汗越多，不代表燃脂越多」']],
+ '理財':[['存錢挑戰','「52 週存錢法，一年存下 6 萬多」'],['信用卡回饋','「信用卡這樣刷，一年回饋好幾千」'],['帳戶分配','「月薪 4 萬，我這樣分 5 個帳戶」'],['消費心理','「你會亂花錢，是因為商家用了這招」'],['投資前準備','「開始投資前，先準備好這筆錢」'],['租屋還是買房','「租房還是買房？先算這筆帳」'],['保險觀念','「出社會第一張保單，先看這個」'],['副業收入','「下班後，我靠這個多一份收入」'],['防詐提醒','「接到這種電話，直接掛掉」'],['複利差距','「30 歲開始存，和 40 歲開始差多少？」']],
+ '旅遊':[['一日遊路線','「台北出發一日遊，不用開車」'],['住宿開箱','「一晚 2000 元，竟然有這種景色」'],['在地美食','「去＿＿只吃觀光客的店太可惜」'],['打包技巧','「出國 7 天，只帶一個登機箱」'],['交通攻略','「到＿＿機場後，最省錢的進市區方式」'],['季節限定','「只有這個月才看得到的＿＿」'],['拍照技巧','「這個景點這樣拍，照片多一個層次」'],['花費公開','「5 天 4 夜大阪，總共花了多少？」'],['必備 App','「出國前，先下載這 3 個 App」'],['踩雷經驗','「我在＿＿被坑了，大家要小心」']],
+ '寵物':[['不能吃的食物','「這些人吃的東西，狗狗絕對不能吃」'],['訓練技巧','「教狗狗定點上廁所，關鍵是這一步」'],['健康警訊','「貓咪出現這個動作，要注意了」'],['成長紀錄','「撿到牠的第一天 vs 現在」'],['反應挑戰','「把＿＿放在牠面前，牠的反應是…」'],['多寵日常','「家裡兩隻貓，每天都在上演這齣」'],['飼養花費','「養一隻貓，一個月要花多少？」'],['用品 DIY','「用紙箱做一個貓跳台」'],['帶寵物出門','「帶狗出門，一定要準備這些」'],['領養故事','「牠在收容所待了 2 年，現在是這樣」']],
+ '職場':[['新人生存','「進公司第一週，一定要做這 3 件事」'],['談加薪','「想加薪，不要直接問主管這句」'],['會議技巧','「開會一直被打斷，這樣說就好」'],['履歷重點','「HR 看履歷只花幾秒，重點放這裡」'],['拒絕的話術','「同事一直把工作推給你，這樣拒絕」'],['離職眉角','「離職前，一定要先確認這件事」'],['時間管理','「我每天準時下班，靠的是這個方法」'],['工作比較','「月薪一樣，這兩種工作差在哪？」'],['主管視角','「當了主管才知道，這種員工最被重用」'],['上班族日常','「上班族的一天，真實版」']],
+ '親子':[['副食品製作','「寶寶副食品，一次做一週份」'],['親子共讀','「這 3 本繪本，我家小孩每天都要看」'],['情緒引導','「小孩大哭的時候，我先說這句話」'],['育兒好物','「後悔沒有早點買的育兒用品」'],['室內親子景點','「下雨天也能放電一整天的地方」'],['手足相處','「老大吃醋的時候，我都這樣做」'],['遊戲中學習','「在家玩遊戲，就能學數學」'],['爸爸帶小孩','「爸爸一個人帶小孩一整天」'],['居家安全','「家裡有小小孩，這個地方一定要檢查」'],['童言童語','「我問小孩長大想做什麼，他說…」']],
+ '變現影片':[['開箱第一印象','「拆開的那一刻，我就知道買對了」'],['解決問題示範','「＿＿一直解決不了？用這個 10 秒搞定」'],['價格拆解','「平均一天不到 10 元，就能＿＿」'],['顧客回饋','「客人用完之後跟我說…」'],['幕後製作','「一個＿＿，從製作到出貨的過程」'],['限時優惠','「這週末前下單，多送＿＿」'],['送禮推薦','「不知道送什麼？這個收到的人都說好」'],['正確用法','「很多人都用錯了，正確是這樣」'],['搭配使用','「這兩個一起用，效果更好」'],['品牌故事','「我為什麼要做這個產品」']]
+};
+Object.keys(more).forEach(k=>{if(topics[k])topics[k].push(...more[k])});
+const names=Object.keys(topics);
+let cur=store.get('sv-topic',names[0]);if(!topics[cur])cur=names[0];
+const renderT=()=>{
+ $('chips').innerHTML=names.map(n=>`<button type="button" class="chip" aria-pressed="${n===cur}" data-n="${n}">${n}</button>`).join('');
+ $('tlist').innerHTML=topics[cur].map(t=>`<div class="topic"><h3>${t[0]}</h3><small>開頭範例：${t[1]}</small></div>`).join('');
+};
+$('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;cur=b.dataset.n;store.set('sv-topic',cur);renderT()});
+renderT();
+
+/* ---------- pre-publish check ---------- */
+const qs=[
+ ['我能用一句話說出：這支影片是給誰看的','先寫下目標觀眾，例如「剛出社會的上班族」。說不出來，演算法也推不準。'],
+ ['目標觀眾真的在意這件事（痛點、好奇或共鳴）','想想他們會不會主動搜尋或跟朋友聊這件事。'],
+ ['平台上搜得到同主題影片，而且近期有人看','完全沒人拍不一定是藍海，可能是沒需求。找同題影片看觀看數。'],
+ ['我有不一樣的角度、經驗或更清楚的講法','同樣題目，加入你的親身經驗、數字或對比。'],
+ ['前 3 秒不開聲音也看得懂在講什麼','把鉤子做成大字幕，或直接秀結果畫面。'],
+ ['看完能得到一個具體收穫或情緒','收穫要具體到「可以馬上照做」或「會笑出來」。'],
+ ['有讓人想留言、收藏或轉傳的點','結尾留一個問題，或做成「存起來下次用」的清單。'],
+ ['這個題目可以延伸成系列','能拍第 2、3 集的題目，才能把觀看變成追蹤。'],
+ ['沒看過我的人，也看得懂完整的來龍去脈','補上情境 → 重點 → 結論，刪掉只有自己懂的前情和用語。'],
+ ['每個畫面都看得出主角，講的和看到的一致','靠近拍、背景清乾淨，講到什麼就給看什麼。']
+];
+const MAX=qs.length*2;
+let ans=store.get('sv-ans',{});
+$('qs').innerHTML=qs.map((q,i)=>`<div class="q"><div>${i+1}. ${q[0]}</div><div class="seg" role="radiogroup" aria-label="第 ${i+1} 題">${[['是',2],['不確定',1],['否',0]].map(o=>`<label><input type="radio" name="q${i}" id="q${i}-${o[1]}" value="${o[1]}" ${ans['q'+i]===o[1]?'checked':''}><span>${o[0]}</span></label>`).join('')}</div></div>`).join('');
+const scoreP=()=>{
+ const got=Object.keys(ans).length,sum=Object.values(ans).reduce((a,b)=>a+b,0);
+ $('ps').textContent=sum;
+ const weak=qs.filter((q,i)=>ans['q'+i]!==undefined&&ans['q'+i]<2);
+ let v,c,tip;
+ if(got<qs.length){v=`還有 ${qs.length-got} 題`;c='var(--mute)';tip='全部回答完才會給建議。'}
+ else if(sum>=Math.ceil(MAX*.8)){v='可以拍';c='var(--ok)';tip='題目有受眾基礎。拍完記得用下方的發布後檢核確認數據。'}
+ else if(sum>=Math.ceil(MAX*.55)){v='調整後再拍';c='var(--mid)';tip='先補強這幾點：'}
+ else{v='建議換角度或換題';c='var(--bad)';tip='這個題目目前很難找到觀眾，優先處理：'}
+ $('pv').textContent=v;$('pv').style.background=c;$('pv').style.color='var(--bg)';
+ $('pa').innerHTML=tip+(got===qs.length&&sum<Math.ceil(MAX*.8)?'<ul style="padding-left:1.2em;margin:8px 0 0">'+weak.slice(0,4).map(q=>`<li>${q[1]}</li>`).join('')+'</ul>':'');
+};
+$('qs').addEventListener('change',e=>{ans[e.target.name]=+e.target.value;store.set('sv-ans',ans);scoreP()});
+$('pr').addEventListener('click',()=>{ans={};store.set('sv-ans',ans);document.querySelectorAll('#qs input').forEach(i=>i.checked=false);scoreP()});
+scoreP();
+
+/* ---------- data check ---------- */
+const fields=[['len','影片長度（秒）',30],['views','觀看數',2400],['avg','平均觀看時長（秒）',14],['r3','3 秒留存率 %（選填）',58],['likes','按讚',96],['cmt','留言',12],['share','分享',9],['save','收藏',31],['fol','新增追蹤',8]];
+let vals=store.get('sv-vals',{});
+$('fs').innerHTML=fields.map(f=>`<label for="f-${f[0]}">${f[1]}<input id="f-${f[0]}" type="number" min="0" inputmode="decimal" value="${vals[f[0]]??f[2]}"></label>`).join('');
+const pct=v=>(v>=10?v.toFixed(0):v.toFixed(1))+'%';
+const calc=()=>{
+ const g=k=>{const n=parseFloat($('f-'+k).value);return isFinite(n)?n:0};
+ fields.forEach(f=>vals[f[0]]=$('f-'+f[0]).value);store.set('sv-vals',vals);
+ const V=g('views')||1,L=g('len')||1,r3raw=$('f-r3').value.trim();
+ const ms=[
+  ['平均觀看比例',Math.min(g('avg')/L*100,150),35,60,80,'觀眾平均看了影片的幾成。低於 35% 代表節奏或開頭留不住人。'],
+  ['3 秒留存率',r3raw===''?null:g('r3'),50,70,100,'鉤子強不強的直接證據。低於 50% 請重寫開頭第一句和第一個畫面。'],
+  ['互動率',(g('likes')+g('cmt')+g('share')+g('save'))/V*100,3,8,15,'讚、留言、分享、收藏加總 ÷ 觀看。'],
+  ['分享率',g('share')/V*100,.3,1,2,'最強的受眾訊號：有人願意轉給朋友，代表內容說中了某群人。'],
+  ['收藏率',g('save')/V*100,.5,2,4,'觀眾覺得「之後還用得到」。教學、清單類特別看這個。'],
+  ['追蹤轉換率',g('fol')/V*100,.2,1,2,'看完會不會想看你下一支。低的話，試著做系列、把帳號定位講清楚。']
+ ];
+ let good=0,counted=0,worst=null;
+ $('ms').innerHTML=ms.map(m=>{
+  if(m[1]===null)return `<div class="m"><div class="row"><span>${m[0]}</span><span class="note">未填</span></div><p>${m[5]}</p></div>`;
+  counted++;const lv=m[1]>=m[3]?2:m[1]>=m[2]?1:0;if(lv===2)good++;if(lv===0&&!worst)worst=m;
+  const col=['var(--bad)','var(--mid)','var(--ok)'][lv],lab=['偏弱','普通','不錯'][lv];
+  return `<div class="m"><div class="row"><span>${m[0]}</span><span><span class="num">${pct(m[1])}</span> · <span style="color:${col}">${lab}</span></span></div><div class="meter"><b style="width:${Math.min(m[1]/m[4]*100,100)}%;background:${col}"></b><i style="left:${m[3]/m[4]*100}%" title="不錯門檻"></i></div><p>${m[5]}「不錯」約 ${m[3]}% 以上。</p></div>`;
+ }).join('');
+ $('ds').textContent=good+' / '+counted;
+ const share=g('share')/V*100,save=g('save')/V*100,ratio=g('avg')/L*100;
+ let v,c,t;
+ if(good>=Math.ceil(counted*.66)){v='有受眾，值得加碼';c='var(--ok)';t='同題目、同結構再拍 3 支，做成系列。'}
+ else if(share>=.3||save>=.5){v='有受眾，包裝待加強';c='var(--mid)';t='有人覺得有價值（願意分享或收藏），問題在開頭或節奏讓太多人提早離開。'}
+ else if(ratio>=35){v='看得下去，但沒打中誰';c='var(--mid)';t='觀眾有看但不分享不收藏，題目可能太廣。把目標觀眾縮小，講更具體的痛點。'}
+ else{v='目前受眾不明確';c='var(--bad)';t='回到上方「拍前檢核」重新檢視題目，或換一個角度。'}
+ if(worst&&good<counted)t+=` 最該先改的是「${worst[0]}」。`;
+ $('dv').textContent=v;$('dv').style.background=c;$('dv').style.color='var(--bg)';$('da').textContent=t;
+};
+$('fs').addEventListener('input',calc);
+calc();
+}
+</script>
+</body>
+</html>
