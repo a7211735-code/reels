@@ -489,28 +489,28 @@ $('pr').addEventListener('click',()=>{ans={};store.set('sv-ans',ans);document.qu
 scoreP();
 
 /* ---------- data check ---------- */
-const fields=[['len','影片長度（秒）',30],['views','觀看數',2400],['avg','平均觀看時長（秒）',14],['r3','3 秒留存率 %（選填）',58],['likes','按讚',96],['cmt','留言',12],['share','分享',9],['save','收藏',31],['fol','新增追蹤',8]];
+const fields=[['len','影片長度（秒）',30],['views','觀看數',2400],['avg','平均觀看時長（秒）',14],['skip','略過率 %（選填）',42],['likes','按讚',96],['cmt','留言',12],['share','分享',9],['save','收藏',31],['fol','新增追蹤',2]];
 let vals=store.get('sv-vals',{});
 $('fs').innerHTML=fields.map(f=>`<label for="f-${f[0]}">${f[1]}<input id="f-${f[0]}" type="number" min="0" inputmode="decimal" value="${vals[f[0]]??f[2]}"></label>`).join('');
-const pct=v=>(v>=10?v.toFixed(0):v.toFixed(1))+'%';
+const pct=v=>(v>=10?v.toFixed(0):v>=1?v.toFixed(1):v.toFixed(2))+'%';
 const calc=()=>{
  const g=k=>{const n=parseFloat($('f-'+k).value);return isFinite(n)?n:0};
  fields.forEach(f=>vals[f[0]]=$('f-'+f[0]).value);store.set('sv-vals',vals);
- const V=g('views')||1,L=g('len')||1,r3raw=$('f-r3').value.trim();
+ const V=g('views')||1,L=g('len')||1,skraw=$('f-skip').value.trim();
  const ms=[
   ['平均觀看比例',Math.min(g('avg')/L*100,150),35,60,80,'觀眾平均看了影片的幾成。低於 35% 代表節奏或開頭留不住人。'],
-  ['3 秒留存率',r3raw===''?null:g('r3'),50,70,100,'鉤子強不強的直接證據。低於 50% 請重寫開頭第一句和第一個畫面。'],
+  ['略過率',skraw===''?null:g('skip'),60,40,100,'看到影片後直接滑走的比例，越低越好，是鉤子強不強的直接證據。超過 60% 請重寫開頭第一句和第一個畫面。',true],
   ['互動率',(g('likes')+g('cmt')+g('share')+g('save'))/V*100,3,8,15,'讚、留言、分享、收藏加總 ÷ 觀看。'],
   ['分享率',g('share')/V*100,.3,1,2,'最強的受眾訊號：有人願意轉給朋友，代表內容說中了某群人。'],
   ['收藏率',g('save')/V*100,.5,2,4,'觀眾覺得「之後還用得到」。教學、清單類特別看這個。'],
-  ['追蹤轉換率',g('fol')/V*100,.2,1,2,'看完會不會想看你下一支。低的話，試著做系列、把帳號定位講清楚。']
+  ['追蹤轉換率',g('fol')/V*100,.03,.07,.15,'看完會不會想看你下一支。大約 14 萬觀看漲 100 粉（約 0.07%）就算很厲害。偏低的話，試著做系列、把帳號定位講清楚。']
  ];
  let good=0,counted=0,worst=null;
  $('ms').innerHTML=ms.map(m=>{
   if(m[1]===null)return `<div class="m"><div class="row"><span>${m[0]}</span><span class="note">未填</span></div><p>${m[5]}</p></div>`;
-  counted++;const lv=m[1]>=m[3]?2:m[1]>=m[2]?1:0;if(lv===2)good++;if(lv===0&&!worst)worst=m;
+  counted++;const lv=m[6]?(m[1]<=m[3]?2:m[1]<=m[2]?1:0):(m[1]>=m[3]?2:m[1]>=m[2]?1:0);if(lv===2)good++;if(lv===0&&!worst)worst=m;
   const col=['var(--bad)','var(--mid)','var(--ok)'][lv],lab=['偏弱','普通','不錯'][lv];
-  return `<div class="m"><div class="row"><span>${m[0]}</span><span><span class="num">${pct(m[1])}</span> · <span style="color:${col}">${lab}</span></span></div><div class="meter"><b style="width:${Math.min(m[1]/m[4]*100,100)}%;background:${col}"></b><i style="left:${m[3]/m[4]*100}%" title="不錯門檻"></i></div><p>${m[5]}「不錯」約 ${m[3]}% 以上。</p></div>`;
+  return `<div class="m"><div class="row"><span>${m[0]}</span><span><span class="num">${pct(m[1])}</span> · <span style="color:${col}">${lab}</span></span></div><div class="meter"><b style="width:${Math.min(m[1]/m[4]*100,100)}%;background:${col}"></b><i style="left:${m[3]/m[4]*100}%" title="不錯門檻"></i></div><p>${m[5]}「不錯」約 ${m[3]}% ${m[6]?'以下':'以上'}。</p></div>`;
  }).join('');
  $('ds').textContent=good+' / '+counted;
  const share=g('share')/V*100,save=g('save')/V*100,ratio=g('avg')/L*100;
